@@ -1,0 +1,575 @@
+{
+  "generated_at": "2026-03-31 19:32:30",
+  "dataset": {
+    "name": "Twitter Combined",
+    "slug": "twitter-combined",
+    "path": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\data_lake\\twitter_combined.txt.gz",
+    "file_name": "twitter_combined.txt.gz",
+    "size_mb": 10.129850387573242
+  },
+  "artifacts": {
+    "text_report": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\comparison_results.txt",
+    "json_report": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\comparison_data.json",
+    "dashboard": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\dashboard.html"
+  },
+  "proof_files": {
+    "graphframes": {
+      "root": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes",
+      "summary_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+      "timings_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\benchmark_timings.csv",
+      "pagerank_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\pagerank_top100\\part-00000-5a260479-467f-44c6-809a-594ca2b52c5a-c000.csv",
+      "components_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\connected_components\\part-00000-8d490524-c6e1-4613-ad38-a1fa5968047c-c000.csv",
+      "degrees_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\degree_distribution\\part-00000-786215df-45b2-4671-9632-fade20194e18-c000.csv",
+      "triangles_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\triangle_counts\\part-00000-c1bcbea1-6eef-4153-a079-e4369f14c825-c000.csv"
+    },
+    "graphx": {
+      "root": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx",
+      "summary_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv",
+      "timings_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\benchmark_timings.csv",
+      "pagerank_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\pagerank_top100.csv",
+      "communities_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\community_sizes.csv",
+      "degrees_csv": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\top_hubs.csv"
+    }
+  },
+  "hero_cards": [
+    {
+      "label": "Comparable Metrics Matched",
+      "value": "6 / 7",
+      "note": "Direct result agreement across shared graph metrics."
+    },
+    {
+      "label": "Measured Runtime Gap",
+      "value": "1.22x",
+      "note": "How much slower GraphFrames was than GraphX on this run."
+    },
+    {
+      "label": "GraphFrames Status",
+      "value": "Success",
+      "note": "Based on runner exit state and generated files."
+    },
+    {
+      "label": "GraphX Status",
+      "value": "Success",
+      "note": "Based on runner exit state and generated files."
+    }
+  ],
+  "runs": [
+    {
+      "name": "GraphFrames",
+      "success": true,
+      "returncode": 0,
+      "runtime": "500.62 s",
+      "log_file": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\graphframes_output.log",
+      "command": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\venv\\Scripts\\python.exe C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\GraphFrames\\graph_analytics.py C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\data_lake\\twitter_combined.txt.gz"
+    },
+    {
+      "name": "GraphX",
+      "success": true,
+      "returncode": 0,
+      "runtime": "411.71 s",
+      "log_file": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\graphx_output.log",
+      "command": "\"C:\\spark\\bin\\spark-shell.CMD\" --driver-java-options \"-Duser.home=C:/DSAI/4th_sem/BDA/BigData_SocialGraph/.spark_shell_home\""
+    }
+  ],
+  "metrics": [
+    {
+      "key": "nodes",
+      "label": "Nodes",
+      "graphframes": "81,306",
+      "graphx": "81,306",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "81,306",
+          "graphx": "81,306"
+        },
+        "metric_key": "nodes",
+        "label": "Nodes"
+      }
+    },
+    {
+      "key": "edges",
+      "label": "Edges (undirected)",
+      "graphframes": "1,342,296",
+      "graphx": "1,342,296",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "1,342,296",
+          "graphx": "1,342,296"
+        },
+        "metric_key": "edges",
+        "label": "Edges (undirected)"
+      }
+    },
+    {
+      "key": "triangles",
+      "label": "Total Triangles",
+      "graphframes": "13,082,506",
+      "graphx": "13,082,506",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "13,082,506",
+          "graphx": "13,082,506"
+        },
+        "metric_key": "triangles",
+        "label": "Total Triangles"
+      }
+    },
+    {
+      "key": "communities_lpa",
+      "label": "Communities (LPA)",
+      "graphframes": "1,284",
+      "graphx": "1,402",
+      "match": false,
+      "proof": {
+        "status": "different",
+        "note": "Label Propagation is heuristic and implementation-sensitive, so differing community counts can occur even when the underlying graph is the same.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "1,284",
+          "graphx": "1,402"
+        },
+        "metric_key": "communities_lpa",
+        "label": "Communities (LPA)"
+      }
+    },
+    {
+      "key": "connected_components",
+      "label": "Connected Components",
+      "graphframes": "1",
+      "graphx": "1",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "1",
+          "graphx": "1"
+        },
+        "metric_key": "connected_components",
+        "label": "Connected Components"
+      }
+    },
+    {
+      "key": "max_degree",
+      "label": "Max Degree",
+      "graphframes": "6,766",
+      "graphx": "6,766",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "6,766",
+          "graphx": "6,766"
+        },
+        "metric_key": "max_degree",
+        "label": "Max Degree"
+      }
+    },
+    {
+      "key": "avg_degree",
+      "label": "Average Degree",
+      "graphframes": "66.0368",
+      "graphx": "66.04",
+      "match": true,
+      "proof": {
+        "status": "matched",
+        "note": "Both frameworks exported this metric from their generated summary files.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "66.0368",
+          "graphx": "66.04"
+        },
+        "metric_key": "avg_degree",
+        "label": "Average Degree"
+      }
+    },
+    {
+      "key": "density",
+      "label": "Graph Density",
+      "graphframes": "N/A",
+      "graphx": "0.0004",
+      "match": null,
+      "proof": {
+        "status": "framework-specific",
+        "note": "This metric is currently exported only by the GraphX pipeline in this project, so the GraphFrames side is intentionally marked N/A.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "N/A",
+          "graphx": "0.0004"
+        },
+        "metric_key": "density",
+        "label": "Graph Density"
+      }
+    },
+    {
+      "key": "global_clustering_coeff",
+      "label": "Global Clustering Coefficient",
+      "graphframes": "N/A",
+      "graphx": "0.0425",
+      "match": null,
+      "proof": {
+        "status": "framework-specific",
+        "note": "This metric is currently exported only by the GraphX pipeline in this project, so the GraphFrames side is intentionally marked N/A.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "N/A",
+          "graphx": "0.0425"
+        },
+        "metric_key": "global_clustering_coeff",
+        "label": "Global Clustering Coefficient"
+      }
+    },
+    {
+      "key": "avg_local_clustering_coeff",
+      "label": "Average Local Clustering Coefficient",
+      "graphframes": "N/A",
+      "graphx": "0.1287",
+      "match": null,
+      "proof": {
+        "status": "framework-specific",
+        "note": "This metric is currently exported only by the GraphX pipeline in this project, so the GraphFrames side is intentionally marked N/A.",
+        "files": {
+          "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphframes\\graph_summary.csv",
+          "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\proof\\graphx\\graph_summary.csv"
+        },
+        "values": {
+          "graphframes": "N/A",
+          "graphx": "0.1287"
+        },
+        "metric_key": "avg_local_clustering_coeff",
+        "label": "Average Local Clustering Coefficient"
+      }
+    }
+  ],
+  "timings": [
+    {
+      "algorithm": "Graph Loading",
+      "graphframes": 30.266,
+      "graphx": 17.948,
+      "speedup": 1.686316024069534
+    },
+    {
+      "algorithm": "PageRank",
+      "graphframes": 44.1304,
+      "graphx": 20.568,
+      "speedup": 2.1455853753403344
+    },
+    {
+      "algorithm": "Label Propagation",
+      "graphframes": 64.4721,
+      "graphx": 347.237,
+      "speedup": 0.18567174581049828
+    },
+    {
+      "algorithm": "Triangle Count",
+      "graphframes": 82.0998,
+      "graphx": 16.246,
+      "speedup": 5.053539332758834
+    },
+    {
+      "algorithm": "Connected Components",
+      "graphframes": 66.6882,
+      "graphx": 1.489,
+      "speedup": 44.78723975822699
+    },
+    {
+      "algorithm": "Degree Analysis",
+      "graphframes": 36.5948,
+      "graphx": 0.416,
+      "speedup": 87.96826923076924
+    },
+    {
+      "algorithm": "Shortest Paths",
+      "graphframes": 30.1732,
+      "graphx": 6.893,
+      "speedup": 4.377368344697519
+    },
+    {
+      "algorithm": "TOTAL",
+      "graphframes": 500.6173,
+      "graphx": 411.709,
+      "speedup": 1.2159493720078989
+    }
+  ],
+  "pagerank": {
+    "graphframes": [
+      {
+        "node": "115485051",
+        "score": "118.6793"
+      },
+      {
+        "node": "813286",
+        "score": "109.55"
+      },
+      {
+        "node": "40981798",
+        "score": "73.8863"
+      },
+      {
+        "node": "7861312",
+        "score": "62.4099"
+      },
+      {
+        "node": "3359851",
+        "score": "58.3862"
+      },
+      {
+        "node": "43003845",
+        "score": "57.4021"
+      },
+      {
+        "node": "90420314",
+        "score": "51.1363"
+      },
+      {
+        "node": "16303106",
+        "score": "50.1483"
+      },
+      {
+        "node": "15913",
+        "score": "49.3563"
+      },
+      {
+        "node": "972651",
+        "score": "48.8835"
+      }
+    ],
+    "graphx": [
+      {
+        "node": "115485051",
+        "score": "113.5345"
+      },
+      {
+        "node": "813286",
+        "score": "104.4227"
+      },
+      {
+        "node": "40981798",
+        "score": "73.9792"
+      },
+      {
+        "node": "7861312",
+        "score": "61.5245"
+      },
+      {
+        "node": "3359851",
+        "score": "59.2522"
+      },
+      {
+        "node": "43003845",
+        "score": "58.2941"
+      },
+      {
+        "node": "15913",
+        "score": "50.4075"
+      },
+      {
+        "node": "90420314",
+        "score": "48.9992"
+      },
+      {
+        "node": "22462180",
+        "score": "48.5862"
+      },
+      {
+        "node": "16303106",
+        "score": "48.3013"
+      }
+    ],
+    "overlap": {
+      "count": 9,
+      "total": 10,
+      "nodes": [
+        "115485051",
+        "813286",
+        "40981798",
+        "7861312",
+        "3359851",
+        "43003845",
+        "90420314",
+        "16303106",
+        "15913"
+      ]
+    }
+  },
+  "callouts": [
+    "6 of 7 comparable structural metrics matched exactly or within tolerance.",
+    "GraphX completed the full pipeline about 1.22x faster on this dataset.",
+    "GraphFrames provides richer high-level graph analytics and DataFrame integration, while GraphX stays closer to graph-engine internals.",
+    "The dashboard includes both measured output files and research-backed architectural differences, so you can defend implementation and theory together."
+  ],
+  "research_facts": [
+    {
+      "aspect": "Graph theory model",
+      "graphframes": "Represents the graph as property-graph DataFrames for vertices and edges, which keeps graph data close to tabular analytics.",
+      "graphx": "Represents the graph as an RDD-backed property graph with vertex and edge collections plus a triplet view.",
+      "social_media": "Both can model users and relationships, but GraphFrames is easier when social graph analysis must stay connected to profile, activity, or text metadata tables.",
+      "source_label": "Spark GraphX programming guide",
+      "source_url": "https://spark.apache.org/docs/3.5.7/graphx-programming-guide.html"
+    },
+    {
+      "aspect": "DSA orientation",
+      "graphframes": "Closer to relational data structures and algorithms because joins, filters, and aggregations are the main execution building blocks.",
+      "graphx": "Closer to classical graph DSA because it exposes graph-native structures, edge triplets, message passing, and Pregel-style iteration.",
+      "social_media": "This is a clean theoretical difference to explain in a viva: GraphFrames is graph analytics on tables, GraphX is graph computation inside Spark.",
+      "source_label": "GraphFrames architecture",
+      "source_url": "https://graphframes.io/01-about/02-architecture.html"
+    },
+    {
+      "aspect": "Core execution model",
+      "graphframes": "DataFrame-based graph processing with Spark SQL planning and relational operators.",
+      "graphx": "RDD-based property-graph processing with graph-parallel primitives.",
+      "social_media": "GraphFrames fits pipelines where user metadata, hashtags, posts, and graph edges all need to be joined together.",
+      "source_label": "GraphFrames paper (2016)",
+      "source_url": "https://www.microsoft.com/en-us/research/publication/graphframes-an-integrated-api-for-mixing-graph-and-relational-queries/"
+    },
+    {
+      "aspect": "Custom iterative algorithms",
+      "graphframes": "Supports Pregel-style APIs, but the natural development style is still higher-level DataFrame analytics.",
+      "graphx": "Better fit for custom iterative algorithms, edge-centric computation, and message-passing research prototypes.",
+      "social_media": "GraphX is easier to defend when the project includes custom influence propagation, diffusion, or routing logic.",
+      "source_label": "Spark GraphX programming guide",
+      "source_url": "https://spark.apache.org/docs/3.5.7/graphx-programming-guide.html"
+    },
+    {
+      "aspect": "Pattern and motif search",
+      "graphframes": "Native motif finding is built into the API.",
+      "graphx": "No equivalent high-level motif DSL; patterns require lower-level graph logic.",
+      "social_media": "Motif queries are useful for reply loops, mutual follows, suspicious engagement rings, and bot-like triads.",
+      "source_label": "GraphFrames user guide",
+      "source_url": "https://graphframes.io/04-user-guide/04-motif-finding.html"
+    },
+    {
+      "aspect": "Algorithm surface",
+      "graphframes": "Broader high-level toolbox: BFS, motif finding, cycles, k-core, maximal independent set, typed degrees, and DataFrame-friendly graph workflows.",
+      "graphx": "Stronger low-level control and graph-native primitives such as PageRank, SCC, SVD++, and triplet-centric custom algorithms.",
+      "social_media": "GraphFrames is easier to demo broadly; GraphX is better when you want to explain graph-computation internals.",
+      "source_label": "GraphFrames Quick Start",
+      "source_url": "https://graphframes.io/02-quick-start/02-quick-start.html"
+    },
+    {
+      "aspect": "Language and ecosystem fit",
+      "graphframes": "Works naturally with Python, Scala, Java, and Spark Connect workflows.",
+      "graphx": "Primarily Scala-centric and not designed around PySpark workflows.",
+      "social_media": "This matters in classroom and analytics teams where most experimentation happens in Python notebooks.",
+      "source_label": "GraphFrames docs",
+      "source_url": "https://graphframes.io/"
+    },
+    {
+      "aspect": "Memory and optimizer behavior",
+      "graphframes": "Benefits from DataFrame storage, Spark SQL planning, and modern optimizer features such as Catalyst and Adaptive Query Execution.",
+      "graphx": "Uses RDD-based graph structures, which can be faster in graph-native loops but usually carry more object overhead.",
+      "social_media": "For mixed analytics workloads, GraphFrames can be easier to scale and reason about when many joins or filters are involved.",
+      "source_label": "GraphFrames About",
+      "source_url": "https://graphframes.io/01-about/01-index.html"
+    },
+    {
+      "aspect": "Performance tradeoff",
+      "graphframes": "Often more memory-friendly and easier to integrate with SQL optimization.",
+      "graphx": "Often faster on raw iterative workloads for small and medium graphs.",
+      "social_media": "If the goal is fastest graph-only execution, GraphX often wins; if the goal is mixed analytics plus explainability, GraphFrames is usually more practical.",
+      "source_label": "GraphFrames benchmarks",
+      "source_url": "https://graphframes.io/01-about/03-benchmarks.html"
+    },
+    {
+      "aspect": "Research maturity",
+      "graphframes": "Has fewer recent university papers, but the research tends to focus on workflow integration and community analysis.",
+      "graphx": "Has stronger long-term academic presence in systems papers, benchmarks, and custom algorithm engineering.",
+      "social_media": "This helps explain why GraphX still appears in benchmark papers even while GraphFrames has stronger product momentum.",
+      "source_label": "Revisiting Graph Analytics Benchmark (SIGMOD 2025)",
+      "source_url": "https://doi.org/10.1145/3725345"
+    },
+    {
+      "aspect": "Research evidence in social graphs",
+      "graphframes": "Pattern-driven community discovery can be very effective when the suspicious structure is already known.",
+      "graphx": "General iterative graph algorithms remain useful when the pattern is unknown and must emerge from the graph.",
+      "social_media": "This is a strong talking point for Twitter-style community mining and suspicious-behavior detection.",
+      "source_label": "GraphFrames community-detection paper (2024)",
+      "source_url": "https://arxiv.org/abs/2408.03966"
+    },
+    {
+      "aspect": "Ecosystem direction",
+      "graphframes": "Actively evolving, including new algorithms and an internal GraphX fork for current Spark support.",
+      "graphx": "Still usable, but marked deprecated upstream in Spark 4.0 planning.",
+      "social_media": "For a new student project frontend, GraphFrames gives a more future-facing story while GraphX still provides a valuable low-level benchmark baseline.",
+      "source_label": "SPARK-50857",
+      "source_url": "https://issues.apache.org/jira/browse/SPARK-50857"
+    }
+  ],
+  "log_paths": {
+    "graphframes": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\graphframes_output.log",
+    "graphx": "C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\Comparison_Report\\runs\\twitter-combined\\graphx_output.log"
+  },
+  "log_snippets": {
+    "graphframes": [
+      "Nodes: 81,306",
+      "Edges: 1,342,296 (undirected)",
+      "Top 10 Most Influential Nodes:",
+      "Total Unique Triangles: 13,082,506",
+      "MODULE 4: CONNECTED COMPONENTS -- Connectivity",
+      "Total Connected Components: 1",
+      "Average Degree:  66.04",
+      "Top 10 Most Connected Nodes:",
+      "Landmark Nodes: [115485051, 40981798, 813286]",
+      "[OK] Connected Components   -> C:\\DSAI\\4th_sem\\BDA\\BigData_SocialGraph\\GraphFrames\\outputs\\graph_analytics\\connected_components",
+      "ANALYSIS COMPLETE",
+      "Nodes:                81,306"
+    ],
+    "graphx": [
+      "Nodes: 81,306",
+      "Edges: 1,342,296 (undirected)",
+      "[OK] PageRank completed in 20.568 s",
+      "Top 10 Influential Nodes:",
+      "[OK] LPA completed in 347.237 s",
+      "Communities with >10 nodes: 736",
+      "[OK] Triangle Count completed in 16.246 s",
+      "Total Triangles: 13,082,506",
+      "MODULE 4: CONNECTED COMPONENTS -- Connectivity",
+      "[OK] Connected Components completed in 1.489 s",
+      "[OK] Degree Analysis completed in 0.416 s",
+      "Avg Degree: 66.04"
+    ]
+  }
+}

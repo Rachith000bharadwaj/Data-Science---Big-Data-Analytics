@@ -1,0 +1,216 @@
+:: loading settings :: url = jar:file:/C:/DSAI/4th_sem/BDA/BigData_SocialGraph/venv/Lib/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+=======================================================
+  BDA Social Graph -- Dynamic GraphFrames Analytics
+=======================================================
+
+  Dataset:  Twitter Combined
+  File:     twitter_combined.txt.gz
+  Size:     10.1 MB
+  Spark:    v3.5.1
+
+-------------------------------------------------------
+  LOADING GRAPH FROM SNAP DATASET...
+-------------------------------------------------------
+
+  [OK] Graph loaded successfully!
+    Nodes: 81,306
+    Edges: 1,342,296 (undirected)
+
+=======================================================
+  MODULE 1: PAGERANK -- Influence Maximization
+=======================================================
+
+  Top 10 Most Influential Nodes:
++---------+------------------+
+|id       |pagerank          |
++---------+------------------+
+|115485051|118.67927260421563|
+|813286   |109.54995439492117|
+|40981798 |73.88629137664765 |
+|7861312  |62.40989621591959 |
+|3359851  |58.38620707753252 |
+|43003845 |57.402096442777   |
+|90420314 |51.13630027966982 |
+|16303106 |50.148269286093395|
+|15913    |49.356329901368014|
+|972651   |48.88345990750745 |
++---------+------------------+
+only showing top 10 rows
+
+
+=======================================================
+  MODULE 2: LABEL PROPAGATION -- Community Detection
+=======================================================
+
+  Total Communities Detected: 1284
+
+  Top 10 Largest Communities:
++---------+-----+
+|label    |count|
++---------+-----+
+|14654965 |4776 |
+|22679419 |2298 |
+|16464746 |2128 |
+|333138240|2124 |
+|6480682  |1941 |
+|103865085|1911 |
+|270449528|1822 |
+|20437286 |1305 |
+|263292498|1167 |
+|14521617 |1033 |
++---------+-----+
+only showing top 10 rows
+
+
+=======================================================
+  MODULE 3: TRIANGLE COUNT -- Clustering Coefficient
+=======================================================
+
+  Total Unique Triangles: 13,082,506
+
+  Top 10 Nodes by Triangle Participation:
++-----+--------+
+|count|id      |
++-----+--------+
+|96815|40981798|
+|87551|43003845|
+|86930|22462180|
+|86510|34428380|
+|69416|3359851 |
+|46567|15913   |
+|46477|18776017|
+|42551|11348282|
+|40236|27633075|
+|39854|15853668|
++-----+--------+
+only showing top 10 rows
+
+
+=======================================================
+  MODULE 4: CONNECTED COMPONENTS -- Connectivity
+=======================================================
+
+  Total Connected Components: 1
+  Largest Component Size:     81,306 / 81,306 (100.0%)
+
+  Top 5 Components:
++---------+-----+
+|component|count|
++---------+-----+
+|12       |81306|
++---------+-----+
+
+
+=======================================================
+  MODULE 5: DEGREE ANALYSIS -- Connectivity Distribution
+=======================================================
+
+  Average Degree:  66.04
+  Max Degree:      6766
+  Min Degree:      2
+  Std Dev:         135.69
+
+  Top 10 Most Connected Nodes:
++---------+------+
+|id       |degree|
++---------+------+
+|115485051|6766  |
+|40981798 |6478  |
+|813286   |6022  |
+|43003845 |5516  |
+|3359851  |4980  |
+|22462180 |4968  |
+|34428380 |4952  |
+|7861312  |4310  |
+|15913    |4266  |
+|59804598 |3578  |
++---------+------+
+only showing top 10 rows
+
+  Degree Distribution (top 15 bins):
++------+-----+
+|degree|count|
++------+-----+
+|2     |4996 |
+|4     |4857 |
+|6     |4191 |
+|8     |3671 |
+|10    |3313 |
+|12    |2980 |
+|14    |2756 |
+|16    |2422 |
+|18    |2245 |
+|20    |2075 |
+|22    |1952 |
+|24    |1868 |
+|26    |1676 |
+|28    |1650 |
+|30    |1480 |
++------+-----+
+only showing top 15 rows
+
+
+=======================================================
+  MODULE 6: SHORTEST PATHS -- Reachability Analysis
+=======================================================
+  Landmark Nodes: [115485051, 40981798, 813286]
+
+  Shortest Path Distances (sample of 10 nodes):
++---------+--------------------------------------------+
+|id       |distances                                   |
++---------+--------------------------------------------+
+|42839244 |{115485051 -> 3, 813286 -> 3, 40981798 -> 3}|
+|59339600 |{115485051 -> 3, 813286 -> 3, 40981798 -> 3}|
+|20289145 |{813286 -> 2, 115485051 -> 2, 40981798 -> 3}|
+|18131039 |{115485051 -> 2, 813286 -> 2, 40981798 -> 2}|
+|8113622  |{813286 -> 2, 115485051 -> 2, 40981798 -> 3}|
+|126061182|{813286 -> 2, 115485051 -> 3, 40981798 -> 4}|
+|169495645|{115485051 -> 3, 813286 -> 2, 40981798 -> 3}|
+|19687995 |{115485051 -> 3, 813286 -> 3, 40981798 -> 3}|
+|18518096 |{813286 -> 3, 115485051 -> 2, 40981798 -> 2}|
+|26697659 |{115485051 -> 1, 813286 -> 2, 40981798 -> 3}|
++---------+--------------------------------------------+
+only showing top 10 rows
+
+
+=======================================================
+  EXPORTING RESULTS TO CSV
+=======================================================
+  [OK] PageRank Top 100       -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\pagerank_top100
+  [OK] Community Assignments  -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\community_assignments
+  [OK] Triangle Counts Top100 -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\triangle_counts
+  [OK] Connected Components   -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\connected_components
+  [OK] Degree Distribution    -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\degree_distribution
+
+  All outputs saved under: C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics
+  [OK] Benchmark Timings      -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\benchmark_timings.csv
+  [OK] Graph Summary          -> C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\graph_analytics\graph_summary.csv
+
+=======================================================
+                  ANALYSIS COMPLETE
+=======================================================
+  Dataset:              Twitter Combined
+  Nodes:                81,306
+  Edges:                1,342,296
+  Communities (LPA):    1284
+  Connected Components: 1
+  Total Triangles:      13,082,506
+  Max Degree:           6766
+  Average Degree:       66.04
+
+  Per-Algorithm Timings:
+  ---------------------------------------------
+    Graph Loading                30.27 s
+    PageRank                     44.13 s
+    Label Propagation            64.47 s
+    Triangle Count               82.10 s
+    Connected Components         66.69 s
+    Degree Analysis              36.59 s
+    Shortest Paths               30.17 s
+    TOTAL                       500.62 s
+  ---------------------------------------------
+
+  Spark session stopped cleanly.
+SUCCESS: The process with PID 38696 (child process of PID 2804) has been terminated.
+SUCCESS: The process with PID 2804 (child process of PID 27556) has been terminated.
+SUCCESS: The process with PID 27556 (child process of PID 19988) has been terminated.

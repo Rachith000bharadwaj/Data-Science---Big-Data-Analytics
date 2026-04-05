@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\graph_embeddings.py", line 39, in <module>
+    from gensim.models import Word2Vec
+ModuleNotFoundError: No module named 'gensim'

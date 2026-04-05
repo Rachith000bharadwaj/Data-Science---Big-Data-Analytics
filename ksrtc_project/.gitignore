@@ -1,0 +1,13 @@
+.venv/
+.codex-logs/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Large local-only raw data that should not be pushed to GitHub
+data/raw/bus_trails_54feet/
+data/raw/20140711.CSV
+
+# Optional generated or local artifacts
+results/reports/

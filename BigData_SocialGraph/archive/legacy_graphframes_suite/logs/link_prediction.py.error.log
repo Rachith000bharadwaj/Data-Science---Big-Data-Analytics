@@ -1,0 +1,153 @@
+Ivy Default Cache set to: C:\Users\um200\.ivy2\cache
+The jars for the packages stored in: C:\Users\um200\.ivy2\jars
+graphframes#graphframes added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-486c6ca7-7d56-475c-866b-c16df0714ba4;1.0
+	confs: [default]
+	found graphframes#graphframes;0.8.3-spark3.5-s_2.12 in spark-packages
+	found org.slf4j#slf4j-api;1.7.16 in central
+:: resolution report :: resolve 112ms :: artifacts dl 3ms
+	:: modules in use:
+	graphframes#graphframes;0.8.3-spark3.5-s_2.12 from spark-packages in [default]
+	org.slf4j#slf4j-api;1.7.16 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   2   |   0   |   0   |   0   ||   2   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-486c6ca7-7d56-475c-866b-c16df0714ba4
+	confs: [default]
+	0 artifacts copied, 2 already retrieved (0kB/2ms)
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/03/25 23:11:58 WARN ZlibFactory: Failed to load/initialize native-zlib library
+Traceback (most recent call last):
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\link_prediction.py", line 433, in <module>
+    results, best_name = train_and_evaluate(spark, dataset)
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\link_prediction.py", line 228, in train_and_evaluate
+    df = spark.createDataFrame(dataset, SCHEMA)
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\session.py", line 1443, in createDataFrame
+    return self._create_dataframe(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        data, schema, samplingRatio, verifySchema  # type: ignore[arg-type]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\session.py", line 1485, in _create_dataframe
+    rdd, struct = self._createFromLocal(map(prepare, data), schema)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\session.py", line 1090, in _createFromLocal
+    data = list(data)
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\session.py", line 1459, in prepare
+    verify_func(obj)
+    ~~~~~~~~~~~^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\types.py", line 2187, in verify
+    verify_value(obj)
+    ~~~~~~~~~~~~^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\types.py", line 2160, in verify_struct
+    verifier(v)
+    ~~~~~~~~^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\types.py", line 2187, in verify
+    verify_value(obj)
+    ~~~~~~~~~~~~^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\types.py", line 2181, in verify_default
+    verify_acceptable_types(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\DSAI\4th_sem\BDA\BigData_SocialGraph\venv\Lib\site-packages\pyspark\sql\types.py", line 2006, in verify_acceptable_types
+    raise PySparkTypeError(
+    ...<6 lines>...
+    )
+pyspark.errors.exceptions.base.PySparkTypeError: [CANNOT_ACCEPT_OBJECT_IN_TYPE] `DoubleType()` can not accept object `0` in type `int`.
+26/03/25 23:12:31 WARN SparkEnv: Exception while deleting Spark temp dir: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae\userFiles-dfe2d0c6-d8d8-4e0d-aac2-214cced92b63
+java.io.IOException: Failed to delete: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae\userFiles-dfe2d0c6-d8d8-4e0d-aac2-214cced92b63\org.slf4j_slf4j-api-1.7.16.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:108)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2310)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2310)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.SparkContext.$anonfun$new$34(SparkContext.scala:686)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+26/03/25 23:12:31 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae\userFiles-dfe2d0c6-d8d8-4e0d-aac2-214cced92b63
+java.io.IOException: Failed to delete: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae\userFiles-dfe2d0c6-d8d8-4e0d-aac2-214cced92b63\org.slf4j_slf4j-api-1.7.16.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+26/03/25 23:12:31 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae
+java.io.IOException: Failed to delete: C:\Users\um200\AppData\Local\Temp\spark-642201de-b86e-4b8b-b68d-119b53cea6ae\userFiles-dfe2d0c6-d8d8-4e0d-aac2-214cced92b63\org.slf4j_slf4j-api-1.7.16.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)

@@ -1,0 +1,12 @@
+metric,value
+dataset,Twitter Combined
+nodes,81306
+edges,1342296
+triangles,13082506
+communities_lpa,1284
+connected_components,1
+max_degree,6766
+min_degree,2
+avg_degree,66.0368
+std_degree,135.6878
+total_time_seconds,500.6173

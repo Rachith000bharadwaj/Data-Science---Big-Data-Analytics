@@ -1,0 +1,9 @@
+algorithm,time_seconds
+Graph Loading,17.948
+PageRank,20.568
+Label Propagation,347.237
+Triangle Count,16.246
+Connected Components,1.489
+Degree Analysis,0.416
+Shortest Paths,6.893
+TOTAL,411.709

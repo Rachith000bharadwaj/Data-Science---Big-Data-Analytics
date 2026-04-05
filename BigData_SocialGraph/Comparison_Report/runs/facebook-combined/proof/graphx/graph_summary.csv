@@ -1,0 +1,14 @@
+metric,value
+nodes,4039
+edges,88234
+density,0.010820
+triangles,1612010
+global_clustering_coeff,0.129182
+avg_local_clustering_coeff,0.143682
+communities_lpa,70
+connected_components,1
+max_degree,2090
+avg_degree,87.38
+estimated_diameter,5
+avg_path_length,2.68
+total_time_seconds,21.59

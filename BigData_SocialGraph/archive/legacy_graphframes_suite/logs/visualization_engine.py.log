@@ -1,0 +1,26 @@
+:: loading settings :: url = jar:file:/C:/DSAI/4th_sem/BDA/BigData_SocialGraph/venv/Lib/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+============================================================
+  VISUALIZATION & EXPORT ENGINE
+  Dataset: facebook_combined.txt.gz
+============================================================
+
+[1] Loading graph...
+[2] Loading community data...
+  Using default community=0
+[3] Loading influence scores...
+  Using default influence=0
+
+[4] Exporting GEXF for Gephi...
+  GEXF exported: C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\visualization\facebook_graph.gexf (88234 edges, 4039 nodes)
+
+[5] Generating interactive D3.js visualization...
+  Interactive HTML exported: C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\visualization\graph_interactive.html
+  Open in browser: file:///C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\visualization\graph_interactive.html
+
+[6] Plotting degree distribution...
+  Degree distribution plot saved: C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\visualization\degree_distribution.png
+
+  All outputs saved to: C:\DSAI\4th_sem\BDA\BigData_SocialGraph\GraphFrames\outputs\visualization
+SUCCESS: The process with PID 17412 (child process of PID 17536) has been terminated.
+SUCCESS: The process with PID 17536 (child process of PID 9812) has been terminated.
+SUCCESS: The process with PID 9812 (child process of PID 18260) has been terminated.

@@ -1,0 +1,32 @@
+GraphFrames vs GraphX - Comparison Results
+Dataset: Twitter Combined
+======================================================================
+
+Metric                               GraphFrames      GraphX           Result
+----------------------------------------------------------------------
+Nodes                                81,306           81,306           Matched
+Edges (undirected)                   1,342,296        1,342,296        Matched
+Total Triangles                      13,082,506       13,082,506       Matched
+Communities (LPA)                    1,284            1,402            Different
+Connected Components                 1                1                Matched
+Max Degree                           6,766            6,766            Matched
+Average Degree                       66.0368          66.04            Matched
+Graph Density                        N/A              0.0004           N/A
+Global Clustering Coefficient        N/A              0.0425           N/A
+Average Local Clustering Coefficient N/A              0.1287           N/A
+
+Run Status
+----------------------------------------------------------------------
+GraphFrames  Success=True  Runtime=500.62 s    Log=C:\DSAI\4th_sem\BDA\BigData_SocialGraph\Comparison_Report\runs\twitter-combined\graphframes_output.log
+GraphX       Success=True  Runtime=411.71 s    Log=C:\DSAI\4th_sem\BDA\BigData_SocialGraph\Comparison_Report\runs\twitter-combined\graphx_output.log
+
+Presentation Notes
+----------------------------------------------------------------------
+- 6 of 7 comparable structural metrics matched exactly or within tolerance.
+- GraphX completed the full pipeline about 1.22x faster on this dataset.
+- GraphFrames provides richer high-level graph analytics and DataFrame integration, while GraphX stays closer to graph-engine internals.
+- The dashboard includes both measured output files and research-backed architectural differences, so you can defend implementation and theory together.
+
+Dashboard
+----------------------------------------------------------------------
+C:\DSAI\4th_sem\BDA\BigData_SocialGraph\Comparison_Report\runs\twitter-combined\dashboard.html

@@ -1,0 +1,231 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 4.0.1
+      /_/
+         
+Using Scala version 2.13.16 (Java HotSpot(TM) 64-Bit Server VM, Java 17.0.16)
+Type in expressions to have them evaluated.
+Type :help for more information.
+26/03/31 19:25:23 WARN jline: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+Spark context Web UI available at http://Ullas2004:4040
+Spark context available as 'sc' (master = local[*], app id = local-1774965329418).
+Spark session available as 'spark'.
+
+scala> import org.apache.spark.graphx._
+
+scala> import org.apache.spark.rdd.RDD
+
+scala> import org.apache.spark.sql.SparkSession
+
+scala> import org.apache.spark.graphx.lib._
+
+scala> import java.io.{File, PrintWriter}
+
+scala> 
+scala> warning: 1 deprecation (since 2.13.3); for details, enable `:setting -deprecation` or `:replay -deprecation`
+object GraphXAnalytics
+
+scala> 
+scala> 
+scala> 26/03/31 19:25:37 WARN SparkSession: Using an existing Spark session; only runtime SQL configurations will take effect.
+  [Config] Reading dataset from .dataset_config: data_lake/twitter_combined.txt.gz
+============================================================
+  BDA Social Graph -- Native GraphX (Scala) Deep Analytics
+  Dataset: twitter combined (data_lake/twitter_combined.txt.gz)
+============================================================
+
+[PHASE 1] LOADING GRAPH FROM SNAP DATASET...
+26/03/31 19:25:38 WARN ZlibFactory: Failed to load/initialize native-zlib library
+
+[Stage 0:>                                                          (0 + 1) / 1]
+
+[Stage 1:>                                                          (0 + 1) / 1]
+
+                                                                                
+  [OK] Graph loaded in 17.948 s
+    Nodes: 81,306
+    Edges: 1,342,296 (undirected)
+
+============================================================
+  MODULE 1: PAGERANK -- Influence Maximization
+============================================================
+
+[Stage 11:>                                                         (0 + 1) / 1]
+
+                                                                                
+  [OK] PageRank completed in 20.568 s
+  Top 10 Influential Nodes:
+     1. Node 115485051  Score=113.534486
+     2. Node 813286  Score=104.422690
+     3. Node 40981798  Score=73.979159
+     4. Node 7861312  Score=61.524454
+     5. Node 3359851  Score=59.252204
+     6. Node 43003845  Score=58.294085
+     7. Node 15913  Score=50.407503
+     8. Node 90420314  Score=48.999236
+     9. Node 22462180  Score=48.586207
+    10. Node 16303106  Score=48.301271
+
+============================================================
+  MODULE 2: LABEL PROPAGATION -- Community Detection
+============================================================
+
+[Stage 4527:>                                                       (0 + 1) / 1]
+
+[Stage 4527:>                                                       (0 + 1) / 1]
+
+[Stage 4527:>                                                       (0 + 1) / 1]
+
+[Stage 4527:>                                                       (0 + 1) / 1]
+
+[Stage 4528:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4536:>                                                       (0 + 1) / 1]
+
+[Stage 4536:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4548:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4563:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4581:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4602:>                                                       (0 + 1) / 1]
+
+                                                                                
+  [OK] LPA completed in 347.237 s
+  Total Communities: 1402
+  Largest 5 communities: 3737, 2479, 2433, 1488, 1449
+  Communities with >10 nodes: 736
+  Singleton communities: 150
+
+============================================================
+  MODULE 3: TRIANGLE COUNT -- Clustering Coefficient
+============================================================
+
+[Stage 4681:>                                                       (0 + 1) / 1]
+
+[Stage 4682:>                                                       (0 + 1) / 1]
+
+[Stage 4685:>                                                       (0 + 1) / 1]
+
+[Stage 4686:>               (0 + 1) / 1][Stage 4687:>               (0 + 1) / 1]
+
+[Stage 4687:>                                                       (0 + 1) / 1]
+
+[Stage 4689:>                                                       (0 + 1) / 1]
+26/03/31 19:32:20 WARN ShippableVertexPartitionOps: Joining two VertexPartitions with different indexes is slow.
+
+                                                                                
+  [OK] Triangle Count completed in 16.246 s
+  Total Triangles: 13,082,506
+  Connected Triples: 923,057,688
+  Global Clustering Coefficient: 0.042519
+  Average Local Clustering Coefficient: 0.128746
+
+============================================================
+  MODULE 4: CONNECTED COMPONENTS -- Connectivity
+============================================================
+  [OK] Connected Components completed in 1.489 s
+  Total Components: 1
+  Largest component: 81306 nodes
+
+============================================================
+  MODULE 5: DEGREE ANALYSIS -- Network Structure
+============================================================
+  [OK] Degree Analysis completed in 0.416 s
+  Graph Density: 0.000406
+  Max Degree: 6766
+  Min Degree: 2
+  Avg Degree: 66.04
+  Std Deviation: 135.69
+  Top 10 Hub Nodes:
+     1. Node 115485051  Degree=6766
+     2. Node 40981798  Degree=6478
+     3. Node 813286  Degree=6022
+     4. Node 43003845  Degree=5516
+     5. Node 3359851  Degree=4980
+     6. Node 22462180  Degree=4968
+     7. Node 34428380  Degree=4952
+     8. Node 7861312  Degree=4310
+     9. Node 15913  Degree=4266
+    10. Node 59804598  Degree=3578
+
+============================================================
+  MODULE 6: SHORTEST PATHS -- Reachability
+============================================================
+  Landmarks: 115485051, 813286
+
+[Stage 4866:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4875:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4887:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4902:>                                                       (0 + 1) / 1]
+
+                                                                                
+  [OK] Shortest Paths completed in 6.893 s
+  Estimated Diameter (from landmarks): 5
+  Average Path Length (from landmarks): 2.49
+
+============================================================
+               GRAPHX DEEP ANALYTICS - SUMMARY
+============================================================
+  Nodes:                    81,306
+  Edges:                    1,342,296
+  Density:                  0.000406
+  Triangles:                13,082,506
+  Global Clustering Coeff:  0.042519
+  Avg Local Clustering:     0.128746
+  Communities (LPA):        1402
+  Connected Components:     1
+  Max Degree:               6766
+  Avg Degree:               66.04
+  Estimated Diameter:       5
+  Avg Path Length:          2.49
+
+  Per-Algorithm Timings:
+  ---------------------------------------------
+    Graph Loading                17.95 s
+    PageRank                     20.57 s
+    Label Propagation           347.24 s
+    Triangle Count               16.25 s
+    Connected Components          1.49 s
+    Degree Analysis               0.42 s
+    Shortest Paths                6.89 s
+    TOTAL                       411.71 s
+  ---------------------------------------------
+    TOTAL EXECUTION TIME:      411.71 s
+
+  All outputs saved to: GraphX/outputs/
+  Files: pagerank_top100.csv, community_assignment.csv,
+         community_sizes.csv, degree_distribution.csv,
+         top_hubs.csv, benchmark_timings.csv, graph_summary.csv
+
+  GraphX Deep Analytics Complete.
+
+scala> 
+scala> 

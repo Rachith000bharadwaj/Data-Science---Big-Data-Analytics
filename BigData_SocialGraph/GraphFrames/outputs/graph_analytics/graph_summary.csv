@@ -1,0 +1,12 @@
+metric,value
+dataset,Facebook Combined
+nodes,4039
+edges,88234
+triangles,1612010
+communities_lpa,89
+connected_components,1
+max_degree,2090
+min_degree,2
+avg_degree,87.3820
+std_degree,104.8412
+total_time_seconds,52.8453
